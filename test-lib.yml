@@ -1,0 +1,24 @@
+name: Test Test IT lib
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '* */3 * * *'
+
+jobs:
+  test-site:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@main
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - run: pip install -r requirements.txt
+    - run: pytest --testit
+      env:
+        USER_TOKEN: ${{ secrets.USER_TOKEN }}
+        
