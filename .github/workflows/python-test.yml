@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: Set up Python ${{ matrix.python-version }}
-    - uses: actions/setup-python@v2
+      uses: actions/setup-python@v2  
       with:
-        python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}
     - run: pip install -r requirements.txt
     - run: pytest --testit
       env:
