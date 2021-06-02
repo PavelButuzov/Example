@@ -1,6 +1,7 @@
 name: Test Test IT lib
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
