@@ -1,6 +1,7 @@
 name: Test tests on pytest
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
